@@ -1,0 +1,26 @@
+version: "3.1"
+
+services:
+  db:
+    container_name: gostack_desafio09
+    image: postgres
+    restart: always
+    ports:
+      - "5433:5433"
+    environment:
+      POSTGRES_DB: gostack_desafio09
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+
+  db_tests:
+    container_name: gostack_desafio09_tests
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: gostack_desafio09_tests
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+
+
